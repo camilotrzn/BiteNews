@@ -71,11 +71,11 @@ if __name__ == "__main__":
 
     client = newsAPIClient()
 
-    # headlines = client.get_top_headliners(country="us", category="entertainment")
-    # for article in headlines:
-    #      print(f"Title: {article['title']}")
-    #      print(f"URL: {article['url']}")
-    #      print()
+    headlines = client.get_top_headliners(country="us", category="entertainment")
+    for article in headlines:
+         print(f"Title: {article['title']}")
+         print(f"URL: {article['url']}")
+         print()
 
     # headlines = client.get_for_source(source="bbc-news")
     # for article in headlines:
@@ -83,8 +83,8 @@ if __name__ == "__main__":
     #     print(f"URL: {article['url']}")
     #     print()
 
-    everything = client.get_by_keyword(keyword ="Python", sortBy ="popularity", language = "en", searchIn = "title")
-    for article in everything:
-        print(f"Title: {article['title']}")
-        print(f"URL: {article['url']}")
-        print()
+    # everything = client.get_by_keyword(keyword ="Python", sortBy ="popularity", language = "en", searchIn = "title")
+    # for article in everything:
+    #     print(f"Title: {article['title']}")
+    #     print(f"URL: {article['url']}")
+    #     print()
