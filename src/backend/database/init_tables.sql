@@ -1,0 +1,29 @@
+CREATE TABLE IF NOT EXISTS noticias (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo TEXT NOT NULL,
+    descripcion TEXT,
+    publicador TEXT NOT NULL,
+    fecha_publicacion DATETIME,
+    url TEXT UNIQUE,
+    interaccion TEXT
+);
+
+CREATE TABLE IF NOT EXISTS preferencias (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    tema TEXT UNIQUE NOT NULL,
+    nivel_interes INTEGER CHECK(nivel_interes BETWEEN 1 AND 10) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS interacciones (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    news_id INTEGER NOT NULL,
+    tipo TEXT NOT NULL,
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (news_id) REFERENCES news(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS configuraciones (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    clave TEXT UNIQUE NOT NULL,
+    valor TEXT NOT NULL
+);

@@ -73,9 +73,7 @@ if __name__ == "__main__":
 
     headlines = client.get_top_headliners(country="us", category="entertainment")
     for article in headlines:
-         print(f"Title: {article['title']}")
-         print(f"URL: {article['url']}")
-         print()
+         print(article)
 
     # headlines = client.get_for_source(source="bbc-news")
     # for article in headlines:
